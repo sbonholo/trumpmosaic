@@ -161,12 +161,12 @@ export default function MosaicViewerClient() {
       const offscreen = document.createElement("canvas");
       offscreen.width = 100; offscreen.height = 100;
       const ctx2 = offscreen.getContext("2d")!;
-      ctx2.drawImage(img, 0, 0, 100, 100);
+      { const iw = img.naturalWidth; const ih = img.naturalHeight; const s = Math.max(100 / iw, 100 / ih); ctx2.drawImage(img, (100 - iw * s) / 2, (100 - ih * s) / 2, iw * s, ih * s); }
       portraitColorsRef.current = ctx2.getImageData(0, 0, 100, 100).data;
       fitToWindow();
       render();
     };
-    img.src = "/trump-portrait.svg";
+    img.crossOrigin = "anonymous"; img.src = "/api/portrait";
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── Fit canvas to container ───────────────────────────────────
@@ -179,7 +179,7 @@ export default function MosaicViewerClient() {
     canvas.height = container.clientHeight;
 
     // Fit the full portrait into view
-    const portraitAspect = 500 / 580;
+    const portraitAspect = 1;
     const containerAspect = canvas.width / canvas.height;
     if (containerAspect > portraitAspect) {
       const zoom = canvas.height / GRID;
