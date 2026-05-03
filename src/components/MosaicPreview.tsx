@@ -38,7 +38,7 @@ export default function MosaicPreview({ filledCells, totalFilled, onNewCell }: P
     offscreen.width = DISPLAY_GRID;
     offscreen.height = DISPLAY_GRID;
     const ctx = offscreen.getContext("2d")!;
-    const img = new Image();
+    const img = new Image();      img.crossOrigin = "anonymous";
     img.onload = () => {
       ctx.drawImage(img, 0, 0, DISPLAY_GRID, DISPLAY_GRID);
       portraitColorRef.current = ctx.getImageData(0, 0, DISPLAY_GRID, DISPLAY_GRID).data;
@@ -55,7 +55,7 @@ export default function MosaicPreview({ filledCells, totalFilled, onNewCell }: P
   function loadPhoto(url: string, onLoad: () => void): HTMLImageElement | null {
     const cache = imgCacheRef.current;
     if (cache.has(url)) return cache.get(url)!;
-    const img = new Image();
+    const img = new Image();      img.crossOrigin = "anonymous";
     img.crossOrigin = "anonymous";
     img.onload = () => { cache.set(url, img); onLoad(); };
     img.onerror = () => cache.set(url, img); // store even on error to avoid retry loops
