@@ -45,7 +45,7 @@ export default function MosaicPreview({ filledCells, totalFilled, onNewCell }: P
       portraitImgRef.current = img;
       draw();
     };
-    img.src = "/trump-portrait.svg";
+    img.src = "/trump-mugshot.jpg";
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   function realIndexToDisplayIndex(realIdx: number): number {
