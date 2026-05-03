@@ -1,8 +1,7 @@
 import { NextResponse } from 'next/server';
 
-// Redirect browser to Trump mugshot on Wikipedia
-// Source: Fulton County Sheriff's Office booking photo, August 2023
+// Redirect browser to Trump official portrait (BBC News)
 export async function GET() {
-            const mugShotUrl = 'https://upload.wikimedia.org/wikipedia/en/c/c5/Donald_Trump_mug_shot.jpg';
-            return NextResponse.redirect(new URL(mugShotUrl));
+              const portraitUrl = 'https://ichef.bbci.co.uk/news/1536/cpsprodpb/a088/live/ba4bed20-d4b2-11ef-9fd6-0be88a764111.jpg.webp';
+              return NextResponse.redirect(new URL(portraitUrl));
 }
