@@ -82,7 +82,7 @@ export default function MosaicPreview({ filledCells, totalFilled, onNewCell }: P
     // Draw portrait as the base layer — always visible underneath the grid
     const portraitImg = portraitImgRef.current;
     if (portraitImg) {
-      ctx.drawImage(portraitImg, 0, 0, W, H);
+      { const iw = portraitImg.naturalWidth; const ih = portraitImg.naturalHeight; const scale = Math.max(W / iw, H / ih); const dw = iw * scale; const dh = ih * scale; const dx = (W - dw) / 2; const dy = (H - dh) / 2; ctx.drawImage(portraitImg, dx, dy, dw, dh); }
     } else {
       ctx.fillStyle = "#1a1a2e";
       ctx.fillRect(0, 0, W, H);
