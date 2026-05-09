@@ -15,7 +15,7 @@ interface Props {
   onNewCell?: (cell: Cell, newTotal: number) => void;
 }
 
-// Display grid: 100×100 squares, each representing 100 real cells (10×10 block)
+// Display grid: 100×100 squares, each representing 10 real cells (10×10 block)
 const DISPLAY_GRID = 100;
 const TOTAL_DISPLAY = DISPLAY_GRID * DISPLAY_GRID;
 
@@ -49,7 +49,7 @@ export default function MosaicPreview({ filledCells, totalFilled, onNewCell }: P
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   function realIndexToDisplayIndex(realIdx: number): number {
-    return Math.min(Math.floor((realIdx / 1_000_000) * TOTAL_DISPLAY), TOTAL_DISPLAY - 1);
+    return Math.min(Math.floor((realIdx / 100_000) * TOTAL_DISPLAY), TOTAL_DISPLAY - 1);
   }
 
   function loadPhoto(url: string, onLoad: () => void): HTMLImageElement | null {
