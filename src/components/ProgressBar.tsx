@@ -7,7 +7,7 @@ interface Props {
   total?: number;
 }
 
-export default function ProgressBar({ filled, total = 1_000_000 }: Props) {
+export default function ProgressBar({ filled, total = 100_000 }: Props) {
   const [displayed, setDisplayed] = useState(0);
   const pct = Math.min((filled / total) * 100, 100);
 
