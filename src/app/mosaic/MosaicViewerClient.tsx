@@ -11,8 +11,8 @@ interface Cell {
 }
 
 // Real grid: 1000×1000 = 1,000,000 cells
-const GRID = 1000;
-const TOTAL_CELLS = GRID * GRID;
+const GRID = 316;
+const TOTAL_CELLS = 100_000;
 
 // Zoom constraints
 const MIN_ZOOM = 0.5;   // fully zoomed out — whole portrait visible
