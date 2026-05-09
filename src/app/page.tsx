@@ -7,7 +7,7 @@ async function getStats() {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const { data } = (await supabase.from("mosaic_stats").select("*").single()) as any;
     return {
-      totalFilled: Number(data?.total_cells_filled ?? 0),
+      totalFilled: Math.min(Number(data?.total_cells_filled ?? 0), 11847),
       totalPurchases: Number(data?.total_purchases ?? 0),
     };
   } catch {
