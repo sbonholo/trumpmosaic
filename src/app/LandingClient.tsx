@@ -69,7 +69,7 @@ export default function LandingClient({ initialFilled, initialPurchases, initial
             onNewCell={handleNewCell}
           />
           <p className="text-xs text-center mt-3" style={{ color: "#3a3a3a" }}>
-            Far away: a portrait. Up close: 1,000,000 supporters.{" "}
+            Far away: a portrait. Up close: 100,000 supporters.{" "}
             <Link href="/mosaic" style={{ color: "#c9a84c" }}>View full mosaic →</Link>
           </p>
         </div>
@@ -85,7 +85,7 @@ export default function LandingClient({ initialFilled, initialPurchases, initial
               A once-in-a-lifetime gift
             </p>
             <h1 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
-              1,000,000 Trump
+              100,000 Trump
               <br />
               <span style={{ color: "#c9a84c" }}>Supporters.</span>
               <br />
@@ -185,7 +185,7 @@ export default function LandingClient({ initialFilled, initialPurchases, initial
               {
                 step: "04",
                 title: "History Is Made",
-                desc: "When all 1,000,000 cells are filled we print, frame, and personally deliver the portrait to Donald Trump.",
+                desc: "When all 100,000 cells are filled we print, frame, and personally deliver the portrait to Donald Trump.",
               },
             ].map((item) => (
               <div key={item.step} className="flex flex-col gap-3">
@@ -207,10 +207,10 @@ export default function LandingClient({ initialFilled, initialPurchases, initial
             The Mission
           </p>
           <h2 className="text-3xl font-bold text-white">
-            Show him 1,000,000 faces.
+            Show him 100,000 faces.
           </h2>
           <p className="text-gray-500 leading-relaxed">
-            Words can only say so much. This portrait says it all — a million Americans standing
+            Words can only say so much. This portrait says it all — 100,000 Americans standing
             behind their President, each one a real person, each one a real face. When it's
             complete we will have it professionally printed at monumental scale, museum-framed,
             and delivered to Donald Trump as a gift from his supporters.
